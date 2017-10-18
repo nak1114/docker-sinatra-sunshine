@@ -1,0 +1,14 @@
+h2 サンシャイン池崎ゲームリゾルバ
+
+form method="post" action="/sunshine"
+  textarea name="text" placeholder="ここに何か書いて変換ボタンを押してみよう" = @restext
+  br
+  input.square_btn type="submit" value="変換する"
+
+- if @restext
+  a.square_btn href="https://twitter.com/intent/tweet?#{@refescape}" ツイートする
+
+br
+
+/ textarea name="text" placeholder="でばっくちゃん" = @devtext
+
