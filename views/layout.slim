@@ -5,18 +5,31 @@ html
     title = @title || 'notitle'
     
   body
-    == yield
+    div
+      == yield
 
 css:
   body {
     font-family: Verdana, Roboto, "Droid Sans", '游ゴシック', YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+  body > div {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+    padding-left: 0.7rem;
+  }
+  h2 { 
+    font-size: 1.5rem; 
   }
   textarea {
-    width: 30em;
-    height: 8em;
+    width: 24.4rem;
+    height: 6.5rem;
     background: #eee;
     border: 1px solid #bebebe;
-    font-size: 1em;
+    font-size: 0.813rem;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -26,11 +39,11 @@ css:
     border: 1px solid #4881d9;
   }
   .square_btn {
-    font-size: 0.8em;
-    margin: 0.4em;
+    font-size: 0.8rem;
+    margin: 0.4rem;
     position: relative;
     display: inline-block;
-    padding: 0.25em 0.5em;
+    padding: 0.25rem 0.5rem;
     text-decoration: none;
     color: #FFF;
     background: #03A9F4;/*色*/ border: solid 1px #0f9ada;/*線色*/ border-radius: 4px;
@@ -41,3 +54,11 @@ css:
     box-shadow: none;
     text-shadow: none;
   } 
+  @media screen and (min-width:420px) {
+    body > div { width: 420px; }
+    html { font-size: 16px; }
+  }
+  @media screen and (max-width:420px) {
+    body > div { width: 100%; }
+    html { font-size: 3.8vw; }
+  }
